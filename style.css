@@ -1,1 +1,265 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
 
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #f97316;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: #f8fafc;
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+header p {
+  color: #64748b;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+button {
+  margin: 8px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:first-child {
+  background: #f97316;
+  color: #fff;
+}
+
+button:last-child {
+  background: #e2e8f0;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* CARD STYLE (THIS IS THE BIG DIFFERENCE) */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* GRID (like screenshot boxes) */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grid .card {
+  width: 280px;
+}
+
+/* ABOUT BOX */
+#about .card {
+  border-left: 4px solid #f97316;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* CTA SECTION (ORANGE PART) */
+#contact {
+  background: #f97316;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  margin: 40px auto;
+}
+
+#contact {
+  background: #f97316; /* orange */
+  color: white;
+  text-align: center;
+  border-radius: 16px;
+  padding: 60px 20px;
+  margin: 60px auto;
+  max-width: 900px;
+}
+
+#contact .card {
+  background: transparent;
+  box-shadow: none;
+}
+
+#contact a {
+  color: white;
+  font-weight: bold;
+}
+.hero {
+  background: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71') center/cover no-repeat;
+  padding: 120px 20px 60px;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 15px;
+}
+/* WORK EXPERIENCE TIMELINE */
+#experience {
+  position: relative;
+}
+
+/* The vertical line in the middle */
+#experience::before {
+  content: '';
+  position: absolute;
+  top: 120px; /* Adjust based on your H2 height */
+  bottom: 150px;
+  left: 50%;
+  width: 2px;
+  background: #cbd5e1; /* soft grey line */
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* The Dots on the line */
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f97316;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Boxes and text containers */
+.timeline-info, .timeline-content {
+  width: 45%;
+}
+
+/* Zig-Zag: First item info on left, Second item info on right */
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-info {
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-info {
+  text-align: left;
+}
+
+.timeline-info h3 {
+  color: #f97316;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.timeline-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.timeline-content.card {
+  margin: 0; /* overrides your global 15px margin */
+  text-align: left;
+}
+
+.timeline-content ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.timeline-content li {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #475569;
+}
+
+/* Bottom Badges */
+.industries-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  margin: 8px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
