@@ -3,8 +3,6 @@ body {
   font-family: 'Inter', sans-serif;
   background: #f8fafc;
   color: #1e293b;
-  max-width: 1100px;
-  margin: auto;
 }
 
 /* NAVBAR */
@@ -73,13 +71,12 @@ button:hover {
 section {
   max-width: 1000px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 30px;
+  margin-bottom: 30px;
 }
 
 /* CARD STYLE (THIS IS THE BIG DIFFERENCE) */
@@ -89,19 +86,13 @@ h2 {
   border-radius: 12px;
   margin: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
 }
-
-.card:hover {
-  transform: translateY(-6px);
 
 /* GRID (like screenshot boxes) */
 .grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-
 }
 
 .grid .card {
@@ -158,12 +149,11 @@ h2 {
 }
 
 .overlay {
-  background: rgba(255,255,255,0.95);
-  padding: 50px 30px;
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
   border-radius: 20px;
   display: inline-block;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .profile-img {
