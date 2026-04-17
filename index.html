@@ -3,176 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jerry Mae Losito - Portfolio</title>
+<title>Jerry Mae Losito | Personal Website</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-html {
-  scroll-behavior: smooth;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f7f7f5;
+  color:#1e293b;
+  line-height:1.6;
 }
 
 /* NAVBAR */
-nav {
-  position: sticky;
-  top: 0;
-  background: #ffffffcc;
-  backdrop-filter: blur(10px);
-  padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid #e2e8f0;
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  z-index:999;
+  border-bottom:1px solid #e5e7eb;
 }
 
-nav a {
-  margin: 0 15px;
-  color: #64748b;
-  text-decoration: none;
-  font-weight: 500;
+nav .nav-wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:center;
+  gap:28px;
 }
 
-nav a:hover {
-  color: #f97316;
+nav a{
+  text-decoration:none;
+  color:#64748b;
+  font-size:14px;
+  font-weight:600;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#f97316;
 }
 
 /* HERO */
-.hero {
-  background: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71') center/cover no-repeat;
-  padding: 120px 20px 60px;
-  text-align: center;
+.hero{
+  padding-top:70px;
+  background:#f3f2f0;
 }
 
-.overlay {
-  background: rgba(255,255,255,0.9);
-  padding: 40px;
-  border-radius: 20px;
-  display: inline-block;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.hero-cover{
+  height:230px;
+  background:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
 }
 
-.profile-img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  margin-bottom: 15px;
+.hero-content{
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+  margin-top:-55px;
+  padding:0 20px 50px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin: 0;
+.profile-img{
+  width:115px;
+  height:115px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid white;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.hero p {
-  color: #64748b;
+.status{
+  display:inline-block;
+  margin-top:-8px;
+  background:white;
+  padding:5px 12px;
+  border-radius:30px;
+  font-size:12px;
+  color:#16a34a;
+  border:1px solid #e5e7eb;
+}
+
+.hero h1{
+  font-size:58px;
+  margin-top:18px;
+  line-height:1.1;
+}
+
+.hero p{
+  color:#64748b;
+  font-size:22px;
+  margin-top:8px;
 }
 
 /* BUTTONS */
-button {
-  margin: 8px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
+.buttons{
+  margin-top:24px;
 }
 
-button:first-child {
-  background: #f97316;
-  color: #fff;
+.btn{
+  display:inline-block;
+  padding:13px 28px;
+  border-radius:30px;
+  font-weight:700;
+  font-size:14px;
+  text-decoration:none;
+  transition:.3s;
+  margin:6px;
 }
 
-button:last-child {
-  background: #e2e8f0;
+.btn-primary{
+  background:#f97316;
+  color:white;
+  box-shadow:0 10px 20px rgba(249,115,22,.25);
 }
 
-button:hover {
-  opacity: 0.9;
+.btn-primary:hover{
+  transform:translateY(-3px);
 }
 
-/* SECTIONS */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
+.btn-light{
+  background:white;
+  color:#1e293b;
+  border:1px solid #e5e7eb;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
+.btn-light:hover{
+  transform:translateY(-3px);
+}
+
+/* GENERAL */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.section-sub{
+  text-align:center;
+  color:#64748b;
+  max-width:700px;
+  margin:0 auto 45px;
 }
 
 /* CARDS */
-.card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-/* GRID */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.grid .card {
-  width: 280px;
+.card{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,.04);
 }
 
 /* ABOUT */
-#about .card {
-  border-left: 4px solid #f97316;
+#about .card{
+  border-left:5px solid #f97316;
 }
 
-/* TESTIMONIAL */
-.testimonial {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
 }
 
-/* CTA */
-#contact {
-  background: #f97316;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  border-radius: 16px;
-  margin: 60px auto;
-  max-width: 900px;
+/* SERVICE */
+.service-icon{
+  font-size:28px;
+  margin-bottom:14px;
 }
 
-#contact h2 {
-  color: white;
+.grid h3{
+  margin-bottom:15px;
 }
 
-#contact .card {
-  background: transparent;
-  box-shadow: none;
+.grid ul{
+  padding-left:18px;
+  color:#64748b;
 }
 
-#contact a {
-  color: white;
-  font-weight: bold;
+/* EXPERIENCE */
+.exp-item{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:25px;
+  align-items:start;
+  margin-bottom:28px;
+}
+
+.exp-left h3{
+  margin-bottom:5px;
+}
+
+.exp-left p{
+  color:#64748b;
+  font-size:14px;
+}
+
+/* BADGES */
+.badges{
+  text-align:center;
+  margin-top:35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 16px;
+  margin:6px;
+  border-radius:30px;
+  border:1px solid #fed7aa;
+  color:#ea580c;
+  background:#fff7ed;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+
+.testimonial{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 10px 25px rgba(0,0,0,.04);
+}
+
+.testimonial p{
+  color:#475569;
+  margin-bottom:18px;
+}
+
+.name{
+  font-weight:700;
+}
+
+/* CONTACT */
+#contact{
+  max-width:100%;
+  background:#f97316;
+  margin-top:30px;
+}
+
+.contact-box{
+  max-width:900px;
+  margin:auto;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:22px;
+  padding:45px 25px;
+  text-align:center;
+}
+
+#contact h2,
+#contact p{
+  color:white;
+}
+
+.contact-links{
+  margin-top:20px;
+}
+
+.contact-links a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 20px;
+  border-radius:30px;
+  color:white;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.4);
+  font-weight:600;
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #94a3b8;
+footer{
+  text-align:center;
+  padding:28px;
+  color:#94a3b8;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1{
+  font-size:40px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+h2{
+  font-size:32px;
+}
+
+.exp-item{
+  grid-template-columns:1fr;
+}
+
+nav .nav-wrap{
+  gap:14px;
+  flex-wrap:wrap;
+}
+
 }
 </style>
 </head>
@@ -181,77 +338,91 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#offer">Services</a>
-  <a href="#experience">Experience</a>
-  <a href="#testimonials">Reviews</a>
-  <a href="#contact">Contact</a>
+  <div class="nav-wrap">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="overlay">
+  <div class="hero-cover"></div>
 
+  <div class="hero-content">
     <img src="https://portfolio-builder-pro--garukalusi353.replit.app/jerry-profile.png" class="profile-img">
+    <br>
+    <span class="status">● Available for work</span>
 
     <h1>Jerry Mae Losito</h1>
     <p>Sales Professional</p>
 
     <div class="buttons">
-      <button onclick="scrollToSection('contact')">Let's Talk</button>
-      <button onclick="scrollToSection('about')">View Profile</button>
+      <a href="#contact" class="btn btn-primary">Let's Talk</a>
+      <a href="#about" class="btn btn-light">View Profile</a>
     </div>
-
   </div>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
+
   <div class="card">
     <p>
-      Hi, I'm Jerry Mae Losito, a professional with over seven years of experience in high-volume outbound and inbound communication roles. My background in cold calling, lead qualification, and follow-ups has given me a deep understanding of customer needs and relationship building.
-
-
+      Hi, I'm Jerry Mae Losito, a professional with over seven years of experience in high-volume outbound and inbound communication roles.
+      My background in cold calling, lead qualification, and follow-ups has given me a deep understanding of customer needs and relationship building.
     </p>
+    <br>
     <p>
-      I've supported fast-paced campaigns across industries such as Medicare/Medicaid, auto insurance, and home remodeling, where I worked closely with multiple stakeholders to ensure timely updates, proper documentation, and a smooth overall process.
+      I've supported fast-paced campaigns across industries such as Medicare/Medicaid, auto insurance, and home remodeling,
+      where I worked closely with multiple stakeholders to ensure timely updates, proper documentation, and smooth overall operations.
     </p>
   </div>
 </section>
 
-<!-- OFFER -->
-<section id="offer">
+<!-- SERVICES -->
+<section id="services">
   <h2>What I Offer</h2>
-  <p>7+ years of proven expertise in high-volume sales, lead qualification, and customer engagement — built to drive real results.
+
+  <p class="section-sub">
+    7+ years of proven expertise in high-volume sales, lead qualification, and customer engagement — built to drive real results.
   </p>
 
   <div class="grid">
+
     <div class="card">
+      <div class="service-icon">📞</div>
       <h3>Lead Qualification & Cold Calling</h3>
       <ul>
         <li>Engage potential customers</li>
-        <li>Identify high-interest prospects</li>
-        <li>Increase conversions</li>
+        <li>Identify hot leads</li>
+        <li>Increase conversion rates</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>Appointment Setting & Follow-ups</h3>
+      <div class="service-icon">📅</div>
+      <h3>Appointment Setting</h3>
       <ul>
-        <li>Schedule high-quality appointments</li>
+        <li>Book qualified meetings</li>
         <li>Reduce no-shows</li>
-        <li>Strategic follow-ups</li>
+        <li>Consistent follow-ups</li>
       </ul>
     </div>
 
     <div class="card">
+      <div class="service-icon">🤝</div>
       <h3>Consultative Selling</h3>
       <ul>
-        <li>Build customer relationships</li>
-        <li>Provide helpful solutions</li>
+        <li>Build trust with prospects</li>
+        <li>Understand client needs</li>
+        <li>Close more opportunities</li>
       </ul>
     </div>
+
   </div>
 </section>
 
@@ -259,97 +430,80 @@ footer {
 <section id="experience">
   <h2>Work Experience</h2>
 
-  <!-- Fusion CX -->
-  <div class="timeline-item">
-    <div class="timeline-info">
+  <div class="exp-item">
+    <div class="exp-left">
       <h3>Fusion CX</h3>
-      <p><strong>Project Call Center Agent</strong></p>
-      <p style="color: #94a3b8;">2019 – 2026</p>
+      <p>Project Call Center Agent</p>
+      <p>2019 – 2026</p>
     </div>
-    <div class="dot"></div>
-    <div class="timeline-content card">
+
+    <div class="card">
       <ul>
-        <li>Handled outbound and inbound calls for various campaigns.</li>
+        <li>Handled outbound and inbound campaigns.</li>
         <li>Assisted customers with inquiries, sales, and follow-ups.</li>
-        <li>Maintained high customer satisfaction and conversion rates.</li>
+        <li>Maintained strong customer satisfaction and conversions.</li>
       </ul>
     </div>
   </div>
 
-  <!-- Sanford Marketing -->
-  <div class="timeline-item">
-    <div class="timeline-info">
+  <div class="exp-item">
+    <div class="exp-left">
       <h3>SANFORD Marketing</h3>
-      <p><strong>Bagger</strong></p>
-      <p style="color: #94a3b8;">2018</p>
+      <p>Bagger</p>
+      <p>2018</p>
     </div>
-    <div class="dot" style="background: #64748b;"></div>
-    <div class="timeline-content card">
+
+    <div class="card">
       <ul>
-        <li>Assisted customers with packing and carrying groceries.</li>
-        <li>Ensured efficient and organized checkout processes.</li>
-        <li>Provided excellent customer service.</li>
+        <li>Provided customer assistance during checkout.</li>
+        <li>Maintained efficient store operations.</li>
+        <li>Delivered friendly customer service.</li>
       </ul>
     </div>
   </div>
 
-  <!-- Industries & Campaigns -->
-  <div class="industries-container">
-    <h3>Industries & Campaigns Handled</h3>
-    <div class="badge">🏥 Medicare/Medicaid</div>
-    <div class="badge">🚗 Auto Insurance</div>
-    <div class="badge">🏠 Home Remodeling</div>
+  <div class="badges">
+    <span class="badge">🏥 Medicare / Medicaid</span>
+    <span class="badge">🚗 Auto Insurance</span>
+    <span class="badge">🏠 Home Remodeling</span>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+<!-- REVIEWS -->
+<section id="reviews">
   <h2>What Others Say</h2>
 
-  <div class="testimonial">
-    "Jerry Mae is excellent at identifying the right leads."
-    <br><strong>- Rose M.</strong>
-  </div>
+  <div class="testimonials">
 
-  <div class="testimonial">
-    "Improved our appointment success rates."
-    <br><strong>- Mark Q.</strong>
+    <div class="testimonial">
+      <p>"Jerry Mae is excellent at identifying the right leads and ensuring every call is productive."</p>
+      <div class="name">Rose M.</div>
+    </div>
+
+    <div class="testimonial">
+      <p>"His professionalism and persistence helped us improve appointment success rates significantly."</p>
+      <div class="name">Mark Q.</div>
+    </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Ready to work together?</h2>
+  <div class="contact-box">
+    <h2>Ready to work together?</h2>
+    <p>Looking for a results-driven sales professional who can connect you with the right customers? Let's talk.</p>
 
-  <p class="cta-text">
-    Looking for a results-driven sales professional who can connect you with the right customers? Let's talk!
-  </p>
-
-  <div class="card contact-info">
-    <p>
-      📧 <a href="mailto:jerrymaelosito39@gmail.com">jerrymaelosito39@gmail.com</a>
-      &nbsp; | &nbsp;
-      🔗 <a href="https://ph.linkedin.com/in/jmlosito" target="_blank">LinkedIn</a>
-    </p>
+    <div class="contact-links">
+      <a href="mailto:jerrymaelosito39@gmail.com">📧 Email Me</a>
+      <a href="https://ph.linkedin.com/in/jmlosito" target="_blank">🔗 LinkedIn</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Jerry Mae Losito
+© 2026 Jerry Mae Losito
 </footer>
-
-<script>
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  const offset = 70;
-  const position = element.offsetTop - offset;
-
-  window.scrollTo({
-    top: position,
-    behavior: "smooth"
-  });
-}
-</script>
 
 </body>
 </html>
