@@ -1,363 +1,192 @@
-<html>
-        <head><title>Downloaded HTML</title></head>
-        <body>
-            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jerry Mae Losito - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry Mae Losito | Portfolio</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f97316;
+            --dark: #1e293b;
+            --light-bg: #f8fafc;
+            --text-gray: #64748b;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        html { scroll-behavior: smooth; }
 
-<link rel="stylesheet" href="style.css">
-<style>
-html {
-scroll-behavior: smooth;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-body {
-margin: 0;
-font-family: 'Inter', sans-serif;
-background: #f8fafc;
-color: #1e293b;
-}
+        /* STICKY GLASS NAVBAR */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-/* NAVBAR */
-nav {
-position: sticky;
-top: 0;
-background: #ffffffcc;
-backdrop-filter: blur(10px);
-padding: 15px;
-text-align: center;
-border-bottom: 1px solid #e2e8f0;
-}
+        nav a {
+            margin: 0 15px;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-nav a {
-margin: 0 15px;
-color: #64748b;
-text-decoration: none;
-font-weight: 500;
-}
+        nav a:hover { color: var(--primary); }
 
-nav a:hover {
-color: #f97316;
-}
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://unsplash.com') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 60px;
+        }
 
-/* HERO */
-.hero {
-background: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71') center/cover no-repeat;
-padding: 120px 20px 60px;
-text-align: center;
-}
+        .overlay {
+            background: white;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 20px;
+        }
 
-.overlay {
-background: rgba(255,255,255,0.9);
-padding: 40px;
-border-radius: 20px;
-display: inline-block;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
 
-.profile-img {
-width: 110px;
-height: 110px;
-border-radius: 50%;
-object-fit: cover;
-border: 4px solid white;
-margin-bottom: 15px;
-}
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 10px 0; }
 
-.hero h1 {
-font-size: 42px;
-margin: 0;
-}
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-.hero p {
-color: #64748b;
-}
+        .btn-primary { background: var(--primary); color: white; border: none; }
+        .btn-secondary { background: #e2e8f0; color: var(--dark); border: none; }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
-/* BUTTONS */
-button {
-margin: 8px;
-padding: 10px 20px;
-border-radius: 20px;
-border: none;
-cursor: pointer;
-font-weight: 600;
-}
+        /* SECTIONS & GRIDS */
+        section { max-width: 1100px; margin: auto; padding: 100px 20px; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
 
-button:first-child {
-background: #f97316;
-color: #fff;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
 
-button:last-child {
-background: #e2e8f0;
-}
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border: 1px solid #f1f5f9;
+        }
 
-button:hover {
-opacity: 0.9;
-}
+        /* CONTACT SECTION */
+        #contact {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            border-radius: 24px;
+            padding: 80px 40px;
+            margin: 60px auto;
+        }
 
-/* SECTIONS */
-section {
-max-width: 1000px;
-margin: auto;
-padding: 60px 20px;
-}
+        #contact a { color: white; text-decoration: underline; }
 
-h2 {
-text-align: center;
-margin-bottom: 30px;
-}
+        footer { text-align: center; padding: 40px; color: var(--text-gray); }
 
-/* CARDS */
-.card {
-background: #ffffff;
-padding: 20px;
-border-radius: 12px;
-margin: 15px;
-box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-/* GRID */
-.grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-}
-
-.grid .card {
-width: 280px;
-}
-
-/* ABOUT */
-#about .card {
-border-left: 4px solid #f97316;
-}
-
-/* TESTIMONIAL */
-.testimonial {
-background: #ffffff;
-border-radius: 10px;
-padding: 20px;
-margin: 10px;
-box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-/* CTA */
-#contact {
-background: #f97316;
-color: white;
-text-align: center;
-padding: 60px 20px;
-border-radius: 16px;
-margin: 60px auto;
-max-width: 900px;
-}
-
-#contact h2 {
-color: white;
-}
-
-#contact .card {
-background: transparent;
-box-shadow: none;
-}
-
-#contact a {
-color: white;
-font-weight: bold;
-}
-
-/* FOOTER */
-footer {
-text-align: center;
-padding: 20px;
-color: #94a3b8;
-}
-</style>
+        @media (max-width: 600px) {
+            .overlay { padding: 30px 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAV -->
 <nav>
-<a href="#about">About</a>
-<a href="#offer">Services</a>
-<a href="#experience">Experience</a>
-<a href="#testimonials">Reviews</a>
-<a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#offer">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
-<div class="overlay">
-
-<img src="https://portfolio-builder-pro--garukalusi353.replit.app/jerry-profile.png" class="profile-img">
-
-<h1>Jerry Mae Losito</h1>
-<p>Sales Professional</p>
-
-<div class="buttons">
-<button onclick="scrollToSection('contact')">Let's Talk</button>
-<button onclick="scrollToSection('about')">View Profile</button>
-</div>
-
-</div>
+    <div class="overlay">
+        <!-- Replaced with a placeholder if your Replit link breaks -->
+        <img src="https://replit.app" class="profile-img" alt="Jerry Mae">
+        <h1>Jerry Mae Losito</h1>
+        <p>Expert Sales Professional & Lead Specialist</p>
+        <div class="buttons">
+            <a href="#contact" class="btn btn-primary">Let's Talk</a>
+            <a href="#about" class="btn btn-secondary">View Profile</a>
+        </div>
+    </div>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
-        <div class="container">
-<h2>About Me</h2>
-<div class="card">
-<p>
-Hi, I'm Jerry Mae Losito, a professional with over seven years of experience in high-volume outbound and inbound communication roles. My background in cold calling, lead qualification, and follow-ups has given me a deep understanding of customer needs and relationship building.
-
-
-</p>
-<p>
-I've supported fast-paced campaigns across industries such as Medicare/Medicaid, auto insurance, and home remodeling, where I worked closely with multiple stakeholders to ensure timely updates, proper documentation, and a smooth overall process.
-</p>
-</div>
+    <h2>About Me</h2>
+    <div class="card" style="border-left: 6px solid var(--primary);">
+        <p>Hi, I'm Jerry Mae Losito, a professional with over seven years of experience in high-volume outbound and inbound communication. I specialize in cold calling, lead qualification, and closing deals in competitive industries like Medicare and Insurance.</p>
+    </div>
 </section>
 
-<!-- OFFER -->
 <section id="offer">
-<h2>What I Offer</h2>
-<p>7+ years of proven expertise in high-volume sales, lead qualification, and customer engagement — built to drive real results.
-</p>
-
-<div class="grid">
-<div class="card">
-<h3>Lead Qualification & Cold Calling</h3>
-<ul>
-<li>Engage potential customers</li>
-<li>Identify high-interest prospects</li>
-<li>Increase conversions</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Appointment Setting & Follow-ups</h3>
-<ul>
-<li>Schedule high-quality appointments</li>
-<li>Reduce no-shows</li>
-<li>Strategic follow-ups</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Consultative Selling</h3>
-<ul>
-<li>Build customer relationships</li>
-<li>Provide helpful solutions</li>
-</ul>
-</div>
-</div>
+    <h2>What I Offer</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Lead Qualification</h3>
+            <p>Identifying high-interest prospects and increasing your conversion funnel.</p>
+        </div>
+        <div class="card">
+            <h3>Appointment Setting</h3>
+            <p>Strategic scheduling and follow-ups to significantly reduce no-show rates.</p>
+        </div>
+        <div class="card">
+            <h3>Consultative Selling</h3>
+            <p>Building long-term customer relationships through solutions-based communication.</p>
+        </div>
+    </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2>Work Experience</h2>
-
-<!-- Fusion CX -->
-<div class="timeline-item">
-<div class="timeline-info">
-<h3>Fusion CX</h3>
-<p><strong>Project Call Center Agent</strong></p>
-<p style="color: #94a3b8;">2019 – 2026</p>
-</div>
-<div class="dot"></div>
-<div class="timeline-content card">
-<ul>
-<li>Handled outbound and inbound calls for various campaigns.</li>
-<li>Assisted customers with inquiries, sales, and follow-ups.</li>
-<li>Maintained high customer satisfaction and conversion rates.</li>
-</ul>
-</div>
-</div>
-
-<!-- Sanford Marketing -->
-<div class="timeline-item">
-<div class="timeline-info">
-<h3>SANFORD Marketing</h3>
-<p><strong>Bagger</strong></p>
-<p style="color: #94a3b8;">2018</p>
-</div>
-<div class="dot" style="background: #64748b;"></div>
-<div class="timeline-content card">
-<ul>
-<li>Assisted customers with packing and carrying groceries.</li>
-<li>Ensured efficient and organized checkout processes.</li>
-<li>Provided excellent customer service.</li>
-</ul>
-</div>
-</div>
-
-<!-- Industries & Campaigns -->
-<div class="industries-container">
-<h3>Industries & Campaigns Handled</h3>
-<div class="badge">🏥 Medicare/Medicaid</div>
-<div class="badge">🚗 Auto Insurance</div>
-<div class="badge">🏠 Home Remodeling</div>
-</div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-<h2>What Others Say</h2>
-
-<div class="testimonial">
-"Jerry Mae is excellent at identifying the right leads."
-<br><strong>- Rose M.</strong>
-</div>
-
-<div class="testimonial">
-"Improved our appointment success rates."
-<br><strong>- Mark Q.</strong>
-</div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
-<h2>Ready to work together?</h2>
-
-<p class="cta-text">
-Looking for a results-driven sales professional who can connect you with the right customers? Let's talk!
-</p>
-
-<div class="card contact-info">
-<p>
-📧 <a href="mailto:jerrymaelosito39@gmail.com">jerrymaelosito39@gmail.com</a>
-&nbsp; | &nbsp;
-🔗 <a href="https://ph.linkedin.com/in/jmlosito" target="_blank">LinkedIn</a>
-</p>
-</div>
+    <h2>Ready to grow your sales?</h2>
+    <p>Let's discuss how my experience can help your business reach its targets.</p>
+    <p>📧 <a href="mailto:jerrymaelosito39@gmail.com">jerrymaelosito39@gmail.com</a></p>
 </section>
 
 <footer>
-© 2026 Jerry Mae Losito
+    © 2024 Jerry Mae Losito • Built for Results
 </footer>
-
-<script>
-function scrollToSection(id) {
-const element = document.getElementById(id);
-const offset = 70;
-const position = element.offsetTop - offset;
-
-window.scrollTo({
-top: position,
-behavior: "smooth"
-});
-}
-</script>
 
 </body>
 </html>
-</pre>
-        </body>
-    </html>
