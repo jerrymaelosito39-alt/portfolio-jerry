@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jerry Mae Losito | Appointment Setter</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jerry Mae Losito | Appointment Setter & VA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',sans-serif;
-  background:#071426;
-  color:#e5eefb;
-  line-height:1.7;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* Animated Navy Background */
+:root{
+  --navy:#061426;
+  --navy2:#0b1f3a;
+  --blue:#38bdf8;
+  --gold:#f8c76a;
+  --text:#eaf2ff;
+  --muted:#aebfd6;
+  --glass:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.15);
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--navy);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* PREMIUM BACKGROUND */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  z-index:-1;
+  z-index:-2;
   background:
-    radial-gradient(circle at 20% 20%,rgba(56,189,248,.18),transparent 35%),
-    radial-gradient(circle at 80% 10%,rgba(37,99,235,.18),transparent 35%),
-    linear-gradient(120deg,#071426,#0f2747,#071426);
-  background-size:200% 200%;
-  animation:bgMove 14s ease infinite;
+    radial-gradient(circle at 15% 20%, rgba(56,189,248,.22), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(248,199,106,.14), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(37,99,235,.22), transparent 35%),
+    linear-gradient(135deg,#061426,#0b1f3a,#061426);
+  background-size:180% 180%;
+  animation:bgMove 16s ease infinite;
 }
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom, black, transparent 85%);
+}
+
 @keyframes bgMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -40,226 +73,436 @@ body::before{
 nav{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   z-index:999;
-  background:rgba(7,20,38,.85);
-  backdrop-filter:blur(14px);
+  background:rgba(6,20,38,.82);
+  backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
+
 .nav-wrap{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
-  padding:15px 20px;
+  padding:16px 22px;
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:-.5px;
+  color:white;
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.nav-links{
+  display:flex;
   gap:26px;
   flex-wrap:wrap;
 }
+
 nav a{
   color:#cbd5e1;
   text-decoration:none;
   font-size:14px;
   font-weight:700;
-  transition:.3s;
+  transition:.3s ease;
 }
-nav a:hover{color:#38bdf8}
+
+nav a:hover{
+  color:var(--blue);
+}
 
 /* HERO */
 .hero{
-  padding:135px 20px 90px;
-  text-align:center;
+  min-height:100vh;
+  padding:145px 22px 90px;
+  display:flex;
+  align-items:center;
 }
+
+.hero-wrap{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:55px;
+  align-items:center;
+}
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(56,189,248,.12);
+  border:1px solid rgba(56,189,248,.25);
+  color:#bae6fd;
+  font-weight:800;
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:64px;
+  line-height:1.02;
+  letter-spacing:-2px;
+  margin-bottom:24px;
+}
+
+.hero h1 span{
+  color:var(--blue);
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:20px;
+  max-width:650px;
+  margin-bottom:30px;
+}
+
+.hero strong{
+  color:white;
+}
+
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:15px 25px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  transition:.3s ease;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue),#60a5fa);
+  color:#04111f;
+  box-shadow:0 18px 35px rgba(56,189,248,.26);
+}
+
+.btn-secondary{
+  color:white;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+}
+
+/* HERO CARD */
+.hero-card{
+  position:relative;
+  padding:32px;
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+  border:1px solid var(--border);
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  backdrop-filter:blur(18px);
+}
+
+.profile-row{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:26px;
+}
+
 .profile-img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
+  width:92px;
+  height:92px;
+  border-radius:24px;
   object-fit:cover;
-  border:5px solid #fff;
-  box-shadow:0 20px 45px rgba(0,0,0,.35);
+  border:3px solid rgba(255,255,255,.8);
 }
+
+.profile-row h3{
+  font-size:22px;
+}
+
+.profile-row p{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
 .status{
   display:inline-block;
-  margin-top:15px;
-  padding:7px 15px;
-  border-radius:30px;
-  background:rgba(34,197,94,.12);
+  margin-top:8px;
   color:#86efac;
-  border:1px solid rgba(134,239,172,.3);
   font-size:13px;
-  font-weight:700;
-}
-.hero h1{
-  font-size:58px;
-  line-height:1.05;
-  margin-top:18px;
-}
-.hero h1 span{color:#38bdf8}
-.hero p{
-  max-width:720px;
-  margin:18px auto 0;
-  font-size:21px;
-  color:#cbd5e1;
-}
-.hero strong{color:#fff}
-
-.buttons{margin-top:30px}
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  margin:7px;
-  border-radius:12px;
-  text-decoration:none;
   font-weight:800;
-  transition:.3s;
-}
-.btn-primary{
-  background:#38bdf8;
-  color:#071426;
-  box-shadow:0 14px 30px rgba(56,189,248,.25);
-}
-.btn-light{
-  background:rgba(255,255,255,.08);
-  color:white;
-  border:1px solid rgba(255,255,255,.15);
-}
-.btn:hover{transform:translateY(-4px)}
-
-/* SECTIONS */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:75px 20px;
-}
-h2{
-  text-align:center;
-  font-size:40px;
-  margin-bottom:14px;
-}
-.section-sub{
-  text-align:center;
-  color:#cbd5e1;
-  max-width:720px;
-  margin:0 auto 40px;
 }
 
-/* CARDS */
-.card,.testimonial{
+.mini-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.mini-card{
+  padding:18px;
+  border-radius:20px;
   background:rgba(255,255,255,.07);
   border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:30px;
-  box-shadow:0 20px 50px rgba(0,0,0,.18);
-  transition:.3s;
 }
-.card:hover,.testimonial:hover{
-  transform:translateY(-6px);
-  border-color:rgba(56,189,248,.45);
-}
-.card p,.card li,.testimonial p{color:#dbeafe}
 
-/* ABOUT */
-#about .card{
-  border-left:5px solid #38bdf8;
+.mini-card h4{
+  font-size:25px;
+  color:var(--gold);
+}
+
+.mini-card p{
+  margin:2px 0 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* GENERAL */
+section{
+  max-width:1150px;
+  margin:auto;
+  padding:85px 22px;
+}
+
+.section-head{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 45px;
+}
+
+h2{
+  font-size:44px;
+  line-height:1.15;
+  letter-spacing:-1.3px;
+  margin-bottom:15px;
+}
+
+.section-head p{
+  color:var(--muted);
   font-size:17px;
 }
 
-/* GRID */
+/* CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+.card{
+  padding:30px;
+  border-radius:26px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  box-shadow:0 20px 45px rgba(0,0,0,.22);
+  backdrop-filter:blur(16px);
+  transition:.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(56,189,248,.45);
+}
+
+.card h3{
+  margin-bottom:12px;
+  font-size:21px;
+}
+
+.card p,
+.card li{
+  color:#cbd5e1;
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  margin-bottom:18px;
+  background:rgba(56,189,248,.14);
+  color:var(--blue);
+  font-size:24px;
+}
+
+ul{
+  padding-left:20px;
+}
+
+/* ABOUT */
+.about-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:24px;
 }
-.service-icon{
-  font-size:32px;
-  margin-bottom:12px;
-}
-.grid h3{margin-bottom:12px;color:#fff}
-ul{padding-left:20px}
 
-/* STATS */
-.stats{
+.highlight{
+  border-left:5px solid var(--blue);
+}
+
+.check-list{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-  margin-top:35px;
+  gap:12px;
 }
-.stat{
-  text-align:center;
-  padding:25px;
-  background:rgba(56,189,248,.09);
-  border:1px solid rgba(56,189,248,.18);
-  border-radius:18px;
+
+.check{
+  padding:14px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  color:#dbeafe;
 }
-.stat h3{
-  font-size:34px;
-  color:#38bdf8;
+
+/* PROCESS */
+.process{
+  counter-reset:item;
 }
-.stat p{color:#cbd5e1}
+
+.process .card{
+  position:relative;
+}
+
+.process .card::before{
+  counter-increment:item;
+  content:"0" counter(item);
+  display:inline-block;
+  margin-bottom:18px;
+  color:var(--gold);
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:1px;
+}
 
 /* EXPERIENCE */
+.timeline{
+  display:grid;
+  gap:22px;
+}
+
 .exp-item{
   display:grid;
-  grid-template-columns:250px 1fr;
-  gap:25px;
-  margin-bottom:28px;
+  grid-template-columns:260px 1fr;
+  gap:24px;
+  align-items:start;
 }
-.exp-left p{color:#cbd5e1;font-size:14px}
 
-/* BADGES */
-.badges{text-align:center;margin-top:30px}
-.badge{
-  display:inline-block;
-  padding:10px 16px;
-  margin:6px;
-  border-radius:30px;
-  background:rgba(56,189,248,.12);
-  color:#bae6fd;
-  border:1px solid rgba(56,189,248,.25);
+.exp-left h3{
+  font-size:22px;
+}
+
+.exp-left p{
+  color:var(--muted);
   font-size:14px;
-  font-weight:700;
 }
 
-/* CONTACT */
-#contact{
+/* CTA */
+.cta{
   max-width:100%;
-  background:rgba(255,255,255,.05);
+  padding:90px 22px;
 }
-.contact-box{
-  max-width:850px;
+
+.cta-box{
+  max-width:1000px;
   margin:auto;
   text-align:center;
-  padding:45px 25px;
-  border-radius:24px;
-  background:linear-gradient(135deg,rgba(56,189,248,.14),rgba(255,255,255,.06));
-  border:1px solid rgba(255,255,255,.14);
+  padding:55px 28px;
+  border-radius:34px;
+  background:
+    linear-gradient(135deg,rgba(56,189,248,.18),rgba(248,199,106,.10)),
+    rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 30px 85px rgba(0,0,0,.30);
 }
-.contact-links{margin-top:24px}
-.contact-links a{
-  display:inline-block;
-  margin:8px;
-  padding:13px 22px;
-  border-radius:12px;
-  text-decoration:none;
-  color:#071426;
-  background:#38bdf8;
-  font-weight:800;
-  transition:.3s;
-}
-.contact-links a:hover{transform:translateY(-4px)}
 
+.cta-box p{
+  color:var(--muted);
+  max-width:680px;
+  margin:0 auto 28px;
+}
+
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+/* FOOTER */
 footer{
   text-align:center;
-  padding:28px;
+  padding:30px;
   color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,.08);
 }
 
 /* MOBILE */
-@media(max-width:768px){
-  .hero h1{font-size:38px}
-  .hero p{font-size:18px}
-  h2{font-size:31px}
-  .exp-item{grid-template-columns:1fr}
-  .btn,.contact-links a{width:100%;max-width:320px}
+@media(max-width:850px){
+  .nav-wrap{
+    justify-content:center;
+  }
+
+  .logo{
+    width:100%;
+    text-align:center;
+  }
+
+  .nav-links{
+    justify-content:center;
+    gap:15px;
+  }
+
+  .hero{
+    padding-top:150px;
+  }
+
+  .hero-wrap,
+  .about-box,
+  .exp-item{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  h2{
+    font-size:32px;
+  }
+
+  .buttons,
+  .contact-links{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .mini-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -268,74 +511,126 @@ footer{
 
 <nav>
   <div class="nav-wrap">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#experience">Experience</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
+    <div class="logo">Jerry Mae <span>Losito</span></div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
 <header class="hero">
-  <img src="https://portfolio-builder-pro--garukalusi353.replit.app/jerry-profile.png" class="profile-img">
-  <br>
-  <span class="status">● Available for Appointment Setting Roles</span>
+  <div class="hero-wrap">
 
-  <h1>Need More Qualified Appointments?<br><span>I Can Help.</span></h1>
+    <div>
+      <div class="kicker">● Appointment Setter & Sales Support VA</div>
 
-  <p>
-    I’m <strong>Jerry Mae Losito</strong>, an appointment setter and sales support professional with
-    <strong>7+ years of call center experience</strong> in outbound calls, lead qualification,
-    follow-ups, and customer engagement.
-  </p>
+      <h1>
+        Turn more leads into <span>booked appointments.</span>
+      </h1>
 
-  <div class="buttons">
-    <a href="#contact" class="btn btn-primary">Hire Me / Book a Call</a>
-    <a href="#services" class="btn btn-light">See What I Can Do</a>
+      <p>
+        I help business owners and sales teams with <strong>cold calling, lead qualification,
+        follow-ups, and appointment setting</strong> so they can spend less time chasing prospects
+        and more time closing deals.
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="profile-row">
+        <img src="https://portfolio-builder-pro--garukalusi353.replit.app/jerry-profile.png" class="profile-img" alt="Jerry Mae Losito">
+
+        <div>
+          <h3>Jerry Mae Losito</h3>
+          <p>Outbound Caller • Lead Qualifier • Appointment Setter</p>
+          <span class="status">● Available for work</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h4>7+</h4>
+          <p>Years call center experience</p>
+        </div>
+
+        <div class="mini-card">
+          <h4>Sales</h4>
+          <p>Outbound and inbound campaigns</p>
+        </div>
+
+        <div class="mini-card">
+          <h4>Follow-ups</h4>
+          <p>Warm leads and callbacks</p>
+        </div>
+
+        <div class="mini-card">
+          <h4>CRM</h4>
+          <p>Clean notes and call updates</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </header>
 
 <section id="about">
-  <h2>Why Work With Me?</h2>
-  <div class="card">
+  <div class="section-head">
+    <h2>Reliable calling support for growing businesses</h2>
     <p>
-      I help businesses connect with the right prospects, qualify leads, and set appointments
-      so business owners and sales teams can focus on closing deals. My background includes
-      high-volume outbound and inbound campaigns, follow-ups, customer handling, and sales support.
-    </p>
-    <br>
-    <p>
-      I’m used to speaking with different types of customers, handling objections, keeping calls professional,
-      and documenting results properly. If you need someone reliable, trainable, and comfortable on the phone,
-      I can help support your growth.
+      Built for small business owners, agencies, and sales teams that need someone dependable
+      on the phone.
     </p>
   </div>
 
-  <div class="stats">
-    <div class="stat">
-      <h3>7+</h3>
-      <p>Years Call Center Experience</p>
+  <div class="about-box">
+    <div class="card highlight">
+      <h3>About Me</h3>
+      <p>
+        Hi, I’m Jerry Mae Losito. I have over 7 years of experience in high-volume outbound
+        and inbound communication roles. My background includes cold calling, lead qualification,
+        customer handling, and follow-ups across different campaigns.
+      </p>
+      <br>
+      <p>
+        I’m comfortable speaking with prospects, asking qualifying questions, handling objections,
+        and keeping the conversation professional.
+      </p>
     </div>
-    <div class="stat">
-      <h3>Outbound</h3>
-      <p>Cold Calling & Follow-ups</p>
-    </div>
-    <div class="stat">
-      <h3>Sales</h3>
-      <p>Lead Qualification Support</p>
+
+    <div class="card">
+      <h3>What you can expect</h3>
+
+      <div class="check-list">
+        <div class="check">✓ Professional phone communication</div>
+        <div class="check">✓ Consistent follow-ups with warm leads</div>
+        <div class="check">✓ Clear call notes and lead updates</div>
+        <div class="check">✓ Willingness to learn your offer and script</div>
+        <div class="check">✓ Reliable support for your sales process</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="services">
-  <h2>Services I Offer</h2>
-  <p class="section-sub">
-    Practical appointment setting and sales support services for small businesses, agencies, and sales teams.
-  </p>
+  <div class="section-head">
+    <h2>Services designed to help you book more calls</h2>
+    <p>
+      I can support your sales pipeline from first contact to booked appointment.
+    </p>
+  </div>
 
   <div class="grid">
     <div class="card">
-      <div class="service-icon">📞</div>
+      <div class="icon">📞</div>
       <h3>Cold Calling</h3>
       <ul>
         <li>Call prospect lists professionally</li>
@@ -345,102 +640,125 @@ footer{
     </div>
 
     <div class="card">
-      <div class="service-icon">📅</div>
+      <div class="icon">📅</div>
       <h3>Appointment Setting</h3>
       <ul>
-        <li>Book qualified appointments</li>
-        <li>Confirm customer interest</li>
+        <li>Book qualified meetings</li>
+        <li>Confirm prospect interest</li>
         <li>Help reduce wasted sales calls</li>
       </ul>
     </div>
 
     <div class="card">
-      <div class="service-icon">🔁</div>
+      <div class="icon">🔁</div>
       <h3>Follow-up Support</h3>
       <ul>
         <li>Follow up callbacks and warm leads</li>
         <li>Keep prospects engaged</li>
-        <li>Update call outcomes properly</li>
+        <li>Help recover missed opportunities</li>
       </ul>
     </div>
 
     <div class="card">
-      <div class="service-icon">📝</div>
+      <div class="icon">📝</div>
       <h3>Lead Qualification</h3>
       <ul>
-        <li>Ask the right screening questions</li>
+        <li>Ask screening questions</li>
         <li>Separate qualified from unqualified leads</li>
-        <li>Provide clean notes and updates</li>
+        <li>Provide clean updates after each call</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-head">
+    <h2>Simple process, professional execution</h2>
+    <p>
+      A clear workflow so you know exactly what is happening with your leads.
+    </p>
+  </div>
+
+  <div class="grid process">
+    <div class="card">
+      <h3>Learn your offer</h3>
+      <p>I study your service, target customer, script, objections, and appointment criteria.</p>
+    </div>
+
+    <div class="card">
+      <h3>Call and qualify</h3>
+      <p>I contact prospects, ask the right questions, and identify serious opportunities.</p>
+    </div>
+
+    <div class="card">
+      <h3>Book and report</h3>
+      <p>I help set appointments and provide clear updates so your team can follow through.</p>
     </div>
   </div>
 </section>
 
 <section id="experience">
-  <h2>Relevant Experience</h2>
-
-  <div class="exp-item">
-    <div class="exp-left">
-      <h3>Fusion CX</h3>
-      <p>Project Call Center Agent</p>
-      <p>2019 – 2026</p>
-    </div>
-
-    <div class="card">
-      <ul>
-        <li>Handled outbound and inbound calling campaigns.</li>
-        <li>Worked on sales, customer service, lead qualification, and follow-up tasks.</li>
-        <li>Supported campaigns in Medicare/Medicaid, auto insurance, and home remodeling.</li>
-        <li>Maintained professionalism during high-volume call handling.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="badges">
-    <span class="badge">Cold Calling</span>
-    <span class="badge">Lead Qualification</span>
-    <span class="badge">Appointment Setting</span>
-    <span class="badge">Follow-ups</span>
-    <span class="badge">CRM/Call Notes</span>
-  </div>
-</section>
-
-<section id="reviews">
-  <h2>What Clients Can Expect</h2>
-  <p class="section-sub">
-    I focus on clear communication, consistency, and helping your team get more qualified conversations.
-  </p>
-
-  <div class="grid">
-    <div class="testimonial">
-      <p>“Professional phone handling and consistent follow-ups to help move prospects closer to booking.”</p>
-      <div class="name">Reliable Calling Support</div>
-    </div>
-
-    <div class="testimonial">
-      <p>“Clear notes, proper lead qualification, and a strong willingness to learn your offer and process.”</p>
-      <div class="name">Sales Team Support</div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="contact-box">
-    <h2>Let’s Fill Your Calendar With Better Leads</h2>
+  <div class="section-head">
+    <h2>Experience that supports real conversations</h2>
     <p>
-      Looking for an appointment setter who can call prospects, qualify leads, and help book more meetings?
-      Send me a message and let’s talk about how I can support your business.
+      My background comes from actual phone-based sales and customer interaction work.
+    </p>
+  </div>
+
+  <div class="timeline">
+    <div class="exp-item">
+      <div class="exp-left">
+        <h3>Fusion CX</h3>
+        <p>Project Call Center Agent</p>
+        <p>2019 – 2026</p>
+      </div>
+
+      <div class="card">
+        <ul>
+          <li>Handled outbound and inbound calling campaigns.</li>
+          <li>Supported sales, customer inquiries, lead qualification, and follow-ups.</li>
+          <li>Worked with campaigns in Medicare/Medicaid, auto insurance, and home remodeling.</li>
+          <li>Maintained professional call handling in high-volume environments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <h3>SANFORD Marketing</h3>
+        <p>Customer Assistance</p>
+        <p>2018</p>
+      </div>
+
+      <div class="card">
+        <ul>
+          <li>Assisted customers in a fast-paced environment.</li>
+          <li>Maintained friendly and professional customer service.</li>
+          <li>Supported daily store operations and customer flow.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta">
+  <div class="cta-box">
+    <h2>Ready to get more qualified conversations?</h2>
+
+    <p>
+      Let’s talk about how I can help with your cold calling, lead qualification,
+      follow-ups, and appointment setting.
     </p>
 
     <div class="contact-links">
-      <a href="mailto:jerrymaelosito39@gmail.com">📧 Email Me</a>
-      <a href="https://ph.linkedin.com/in/jmlosito" target="_blank">🔗 LinkedIn</a>
+      <a href="mailto:jerrymaelosito39@gmail.com" class="btn btn-primary">Email Me</a>
+      <a href="https://ph.linkedin.com/in/jmlosito" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
-© 2026 Jerry Mae Losito | Appointment Setter
+  © 2026 Jerry Mae Losito | Appointment Setter & VA
 </footer>
 
 </body>
